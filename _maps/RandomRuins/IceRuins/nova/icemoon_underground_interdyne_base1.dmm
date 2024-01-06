@@ -10,19 +10,20 @@
 /turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "ad" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 8
+/obj/structure/disposalpipe/trunk,
+/obj/structure/disposaloutlet{
+	dir = 4
 	},
-/obj/structure/closet/secure_closet/personal/wall{
-	icon_door = "locker_wall";
-	pixel_x = 30
+/obj/effect/turf_decal/weather/snow{
+	layer = 3
 	},
-/obj/machinery/button/door/directional/south{
-	id = "interdynecabin2";
-	name = "door bolt control"
+/obj/effect/turf_decal/stripes/end{
+	dir = 1
 	},
-/turf/open/floor/iron/smooth_large,
-/area/ruin/interdyne_planetary_base/main/dorms)
+/turf/open/floor/plating/reinforced{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/interdyne_planetary_base/med/viro)
 "ae" = (
 /obj/machinery/porta_turret/syndicate{
 	dir = 9;
@@ -675,6 +676,12 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
+/obj/machinery/quantumpad{
+	name = "quantum pad to DS-2";
+	layer = 2.8;
+	map_pad_id = "interdyne";
+	map_pad_link_id = "ds2"
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "bS" = (
@@ -882,8 +889,7 @@
 	},
 /obj/machinery/vending/wardrobe/syndie_wardrobe{
 	contraband = list(/obj/item/knife/combat=1, /obj/item/clothing/under/syndicate/coldres=6, /obj/item/clothing/shoes/combat/coldres=6, /obj/item/flashlight/lantern/syndicate=4);
-	extended_inventory = 1;
-	onstation = 0
+	extended_inventory = 1
 	},
 /turf/open/floor/iron/diagonal,
 /area/ruin/interdyne_planetary_base/cargo)
@@ -950,11 +956,12 @@
 /turf/open/floor/iron/smooth_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "cA" = (
-/obj/machinery/light/directional/north,
-/obj/structure/disposalpipe/trunk{
-	dir = 1
+/obj/structure/table/glass,
+/obj/item/reagent_containers/spray/cleaner{
+	pixel_x = 10
 	},
-/obj/machinery/disposal/bin,
+/obj/machinery/light/directional/north,
+/obj/item/storage/box/gloves,
 /turf/open/floor/iron/white/textured_large,
 /area/ruin/interdyne_planetary_base/med/viro)
 "cB" = (
@@ -1102,16 +1109,15 @@
 /turf/open/floor/iron/smooth_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "cK" = (
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/north{
 	req_access = list("syndicate")
-	},
-/obj/structure/table/glass,
-/obj/item/storage/box/gloves,
-/obj/item/reagent_containers/spray/cleaner{
-	pixel_x = 10
 	},
 /turf/open/floor/iron/white/textured_large,
 /area/ruin/interdyne_planetary_base/med/viro)
@@ -2440,24 +2446,19 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 8
 	},
-/obj/machinery/fax{
-	dir = 1;
-	fax_name = "Interdyne Pharmaceuticals";
-	name = "Interdyne Fax Machine";
-	req_access = list("syndicate")
+/obj/item/folder/white,
+/obj/item/paper_bin{
+	pixel_y = 4
+	},
+/obj/item/pen{
+	pixel_y = 4
 	},
 /turf/open/floor/iron/white/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "gn" = (
 /obj/machinery/door/firedoor,
 /obj/structure/table/reinforced,
-/obj/item/paper_bin{
-	pixel_y = 4
-	},
-/obj/item/folder/white,
-/obj/item/pen{
-	pixel_y = 4
-	},
+/obj/item/healthanalyzer,
 /turf/open/floor/iron/white/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "go" = (
@@ -2519,7 +2520,6 @@
 /obj/machinery/door/firedoor,
 /obj/structure/table/reinforced,
 /obj/item/clothing/neck/stethoscope,
-/obj/item/healthanalyzer,
 /turf/open/floor/iron/white/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "gx" = (
@@ -2554,7 +2554,7 @@
 /area/ruin/interdyne_planetary_base/med/pharm)
 "gB" = (
 /obj/machinery/smartfridge/chemistry/preloaded{
-	initial_contents = list(/obj/item/reagent_containers/pill/epinephrine=12, /obj/item/reagent_containers/pill/multiver=5, /obj/item/reagent_containers/cup/bottle/epinephrine=1, /obj/item/reagent_containers/cup/bottle/multiver=1, /obj/item/storage/pill_bottle/sansufentanyl=10, /obj/item/storage/pill_bottle/mannitol=1)
+	initial_contents = list(/obj/item/reagent_containers/pill/epinephrine=12, /obj/item/reagent_containers/pill/multiver=5, /obj/item/reagent_containers/cup/bottle/epinephrine=1, /obj/item/reagent_containers/cup/bottle/multiver=1, /obj/item/storage/pill_bottle/sansufentanyl=3, /obj/item/storage/pill_bottle/mannitol=1)
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med/pharm)
@@ -3011,7 +3011,7 @@
 /area/ruin/interdyne_planetary_base/science)
 "hM" = (
 /obj/item/gun/ballistic/rifle/sniper_rifle/syndicate,
-/obj/structure/rack/gunrack,
+/obj/structure/guncase,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main/vault)
 "hN" = (
@@ -4353,6 +4353,7 @@
 /obj/structure/table/glass/plasmaglass,
 /obj/item/skillchip/wine_taster,
 /obj/item/skillchip/job/roboticist,
+/obj/item/skillchip/job/chef,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "kX" = (
@@ -4905,11 +4906,6 @@
 	icon_door = "locker_wall";
 	pixel_x = 30
 	},
-/obj/machinery/button/door/directional/north{
-	pixel_x = 0;
-	id = "interdynecabin8";
-	name = "door bolt control"
-	},
 /turf/open/floor/iron/smooth_large,
 /area/ruin/interdyne_planetary_base/main/dorms)
 "mj" = (
@@ -5024,16 +5020,17 @@
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/interdyne_planetary_base/serv)
 "mv" = (
+/obj/machinery/door/airlock{
+	name = "Cabin 4"
+	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
-/obj/machinery/door/airlock,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main/dorms)
 "mw" = (
 /obj/machinery/door/airlock{
-	name = "Cabin 3";
-	id = "interdynecabin3"
+	name = "Cabin 3"
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -5042,8 +5039,7 @@
 /area/ruin/interdyne_planetary_base/main/dorms)
 "mx" = (
 /obj/machinery/door/airlock{
-	name = "Cabin 2";
-	id = "interdynecabin2"
+	name = "Cabin 2"
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -5102,8 +5098,7 @@
 /area/ruin/interdyne_planetary_base/eng/disp)
 "mC" = (
 /obj/machinery/door/airlock{
-	name = "Cabin 1";
-	id = "interdynecabin1"
+	name = "Cabin 1"
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -5365,8 +5360,7 @@
 /area/ruin/interdyne_planetary_base/serv/hydr)
 "no" = (
 /obj/machinery/door/airlock{
-	name = "Cabin 5";
-	id = "interdynecabin5"
+	name = "Cabin 5"
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -5375,8 +5369,7 @@
 /area/ruin/interdyne_planetary_base/main/dorms)
 "np" = (
 /obj/machinery/door/airlock{
-	name = "Cabin 6";
-	id = "interdynecabin6"
+	name = "Cabin 6"
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -5385,8 +5378,7 @@
 /area/ruin/interdyne_planetary_base/main/dorms)
 "nq" = (
 /obj/machinery/door/airlock{
-	name = "Cabin 7";
-	id = "interdynecabin7"
+	name = "Cabin 7"
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -5395,8 +5387,7 @@
 /area/ruin/interdyne_planetary_base/main/dorms)
 "nr" = (
 /obj/machinery/door/airlock{
-	name = "Cabin 8";
-	id = "interdynecabin8"
+	name = "Cabin 8"
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -5405,9 +5396,6 @@
 /area/ruin/interdyne_planetary_base/main/dorms)
 "ns" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/cryopod{
-	dir = 4
-	},
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/interdyne_planetary_base/main/dorms)
 "nt" = (
@@ -5572,23 +5560,15 @@
 /area/ruin/interdyne_planetary_base/serv/kitchen)
 "nO" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/bedsheetbin,
+/obj/structure/table/rolling,
 /obj/structure/sign/poster/ripped/directional/west,
-/obj/machinery/cryopod{
-	dir = 4
-	},
-/obj/machinery/computer/cryopod/interdyne/directional/west{
-	req_one_access = list("syndicate")
-	},
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/interdyne_planetary_base/main/dorms)
 "nP" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/effect/mapping_helpers/apc/syndicate_access,
-/obj/machinery/vending/clothing{
-	onstation = 0;
-	extended_inventory = 1
-	},
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/interdyne_planetary_base/main/dorms)
 "nQ" = (
@@ -5721,13 +5701,14 @@
 	},
 /area/ruin/interdyne_planetary_base/main/dorms)
 "oh" = (
+/obj/machinery/cryopod{
+	dir = 4
+	},
+/obj/machinery/computer/cryopod/interdyne/directional/west{
+	req_one_access = list("syndicate")
+	},
 /obj/machinery/light/directional/west,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/washing_machine{
-	pixel_x = -6;
-	pixel_y = 10;
-	layer = 2.91
-	},
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/interdyne_planetary_base/main/dorms)
 "oi" = (
@@ -5742,9 +5723,7 @@
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
-/obj/machinery/firealarm/directional/west{
-	dir = 4
-	},
+/obj/machinery/light_switch/directional/west,
 /turf/open/floor/iron/white,
 /area/ruin/interdyne_planetary_base/serv/bar)
 "ok" = (
@@ -5844,9 +5823,12 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv/kitchen)
 "ox" = (
+/obj/machinery/washing_machine{
+	pixel_z = 10;
+	pixel_w = -6
+	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/sign/poster/contraband/blasto_detergent/directional/west,
-/obj/structure/closet/crate/trashcart/laundry,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/interdyne_planetary_base/main/dorms)
 "oy" = (
@@ -5855,19 +5837,12 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv/hydr)
 "oz" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 8
+/obj/structure/bedsheetbin,
+/obj/machinery/vending/clothing{
+	onstation = 0;
+	extended_inventory = 1
 	},
-/obj/structure/closet/secure_closet/personal/wall{
-	icon_door = "locker_wall";
-	pixel_x = 30
-	},
-/obj/machinery/button/door/directional/north{
-	pixel_x = 0;
-	id = "interdynecabin5";
-	name = "door bolt control"
-	},
-/turf/open/floor/iron/smooth_large,
+/turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/interdyne_planetary_base/main/dorms)
 "oA" = (
 /obj/structure/disposalpipe/segment{
@@ -5877,6 +5852,9 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/airalarm/directional/west{
+	req_access = list("syndicate")
+	},
 /turf/open/floor/iron/white,
 /area/ruin/interdyne_planetary_base/serv/bar)
 "oB" = (
@@ -6076,8 +6054,7 @@
 	id = "interdynedorms";
 	req_access = list("syndicate")
 	},
-/obj/structure/table/rolling,
-/obj/structure/bedsheetbin,
+/obj/structure/closet/crate/trashcart/laundry,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/interdyne_planetary_base/main/dorms)
 "oT" = (
@@ -6193,8 +6170,8 @@
 /obj/item/reagent_containers/cup/glass/drinkingglass{
 	pixel_y = 8
 	},
-/obj/machinery/airalarm/directional/south{
-	req_access = list("syndicate")
+/obj/machinery/firealarm/directional/south{
+	dir = 1
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv/bar)
@@ -7049,20 +7026,6 @@
 /obj/effect/baseturf_helper/reinforced_plating/ceiling,
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/science/xeno)
-"tU" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 8
-	},
-/obj/structure/closet/secure_closet/personal/wall{
-	icon_door = "locker_wall";
-	pixel_x = 30
-	},
-/obj/machinery/button/door/directional/south{
-	id = "interdynecabin4";
-	name = "door bolt control"
-	},
-/turf/open/floor/iron/smooth_large,
-/area/ruin/interdyne_planetary_base/main/dorms)
 "tZ" = (
 /obj/structure/pod,
 /obj/effect/supplypod_rubble,
@@ -7087,15 +7050,6 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/icemoon/underground/explored)
-"wA" = (
-/obj/machinery/quantumpad{
-	name = "quantum pad to DS-2";
-	layer = 2.8;
-	map_pad_id = "interdyne";
-	map_pad_link_id = "ds2"
-	},
-/turf/open/floor/iron/dark/textured_large,
-/area/ruin/interdyne_planetary_base/cargo)
 "xc" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/turf_decal/weather/snow{
@@ -7115,20 +7069,6 @@
 	},
 /turf/open/floor/plating/reinforced,
 /area/ruin/interdyne_planetary_base/main/dorms)
-"xq" = (
-/obj/structure/disposaloutlet{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/end{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
-/turf/open/floor/plating/reinforced{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
-/area/ruin/interdyne_planetary_base/med/viro)
 "xS" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -7236,14 +7176,6 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/icemoon/underground/explored)
-"EA" = (
-/obj/machinery/door/airlock/grunge{
-	name = "Bar"
-	},
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
-/obj/machinery/door/firedoor,
-/turf/open/floor/iron/dark/textured_large,
-/area/ruin/interdyne_planetary_base/serv/bar)
 "EM" = (
 /obj/machinery/hydroponics/constructable{
 	dir = 4
@@ -7262,20 +7194,6 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/icemoon/underground/explored)
-"FK" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 8
-	},
-/obj/structure/closet/secure_closet/personal/wall{
-	icon_door = "locker_wall";
-	pixel_x = 30
-	},
-/obj/machinery/button/door/directional/south{
-	id = "interdynecabin3";
-	name = "door bolt control"
-	},
-/turf/open/floor/iron/smooth_large,
-/area/ruin/interdyne_planetary_base/main/dorms)
 "FU" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -7328,21 +7246,6 @@
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/cargo)
-"Ia" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 8
-	},
-/obj/structure/closet/secure_closet/personal/wall{
-	icon_door = "locker_wall";
-	pixel_x = 30
-	},
-/obj/machinery/button/door/directional/north{
-	pixel_x = 0;
-	id = "interdynecabin7";
-	name = "door bolt control"
-	},
-/turf/open/floor/iron/smooth_large,
-/area/ruin/interdyne_planetary_base/main/dorms)
 "Iu" = (
 /obj/structure/shipping_container/kahraman{
 	pixel_y = -14
@@ -7363,20 +7266,6 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/icemoon/underground/explored)
-"Jg" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 8
-	},
-/obj/structure/closet/secure_closet/personal/wall{
-	icon_door = "locker_wall";
-	pixel_x = 30
-	},
-/obj/machinery/button/door/directional/south{
-	id = "interdynecabin1";
-	name = "door bolt control"
-	},
-/turf/open/floor/iron/smooth_large,
-/area/ruin/interdyne_planetary_base/main/dorms)
 "JE" = (
 /obj/machinery/door/airlock/medical/glass{
 	name = "Medical Wing";
@@ -7441,21 +7330,6 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/icemoon/underground/explored)
-"Mb" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 8
-	},
-/obj/structure/closet/secure_closet/personal/wall{
-	icon_door = "locker_wall";
-	pixel_x = 30
-	},
-/obj/machinery/button/door/directional/north{
-	pixel_x = 0;
-	id = "interdynecabin6";
-	name = "door bolt control"
-	},
-/turf/open/floor/iron/smooth_large,
-/area/ruin/interdyne_planetary_base/main/dorms)
 "Mc" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -8110,11 +7984,11 @@ kP
 lv
 lx
 lS
-tU
+mi
 lv
 nJ
 lv
-oz
+mi
 lS
 lx
 lv
@@ -8287,11 +8161,11 @@ kQ
 lv
 lx
 lS
-FK
+mi
 lv
 nJ
 lv
-Mb
+mi
 lS
 lx
 lv
@@ -8464,11 +8338,11 @@ jm
 lv
 lx
 lS
-ad
+mi
 lv
 nJ
 lv
-Ia
+mi
 lS
 lx
 lv
@@ -8641,7 +8515,7 @@ kV
 lv
 lx
 lS
-Jg
+mi
 lv
 nJ
 lv
@@ -8670,7 +8544,7 @@ aP
 aG
 bc
 bd
-wA
+bm
 da
 bm
 bm
@@ -8883,7 +8757,7 @@ lU
 lU
 nP
 oi
-oT
+oz
 oU
 mQ
 ab
@@ -8942,7 +8816,7 @@ lV
 lV
 nV
 pa
-EA
+pa
 pa
 pa
 ab
@@ -9915,8 +9789,8 @@ LM
 LM
 Iv
 rm
-xq
-aD
+as
+aC
 cA
 dM
 dq
@@ -9974,8 +9848,8 @@ LM
 LM
 BG
 as
-as
-aC
+ad
+aD
 cK
 df
 dr
